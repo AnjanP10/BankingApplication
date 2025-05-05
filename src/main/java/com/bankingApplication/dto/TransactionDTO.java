@@ -1,6 +1,5 @@
 package com.bankingApplication.dto;
 
-import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -8,19 +7,14 @@ import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 
+@Builder
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
-public class CreditDebitRequest {
+public class TransactionDTO {
 
-    @Schema(
-            name = "Credit/Debit Account Number"
-    )
-    private String accountNumber;
-
-    @Schema(
-            name = "Credit/Debit Amount"
-    )
+    private String transactionType;
     private BigDecimal amount;
+    private String accountNumber;
+    private String status;
 }

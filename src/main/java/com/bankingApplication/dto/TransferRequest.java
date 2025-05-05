@@ -8,24 +8,25 @@ import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 
-@Builder
 @Data
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class AccountInfo {
+
+public class TransferRequest {
 
     @Schema(
-            name = "User Account Name"
+            name = "Source Account Number"
     )
-    private String accountName;
+    private String sourceAccountNumber;
 
     @Schema(
-            name = "User Account Balance"
+            name = "Destination Account Number"
     )
-    private BigDecimal accountBalance;
+    private String destinationAccountNumber;
 
     @Schema(
-            name = "User Account Number"
+            name = "Transfered Amount"
     )
-    private String accountNumber;
+    private BigDecimal amount;
 }
